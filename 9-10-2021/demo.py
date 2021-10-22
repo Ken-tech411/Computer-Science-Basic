@@ -1,27 +1,16 @@
-import turtle
+from turtle import *
 
-wn = turtle.Screen()
+speed(1)
+color("red")
+begin_fill()
+pensize(3)
 
-pen = turtle.Turtle()
+left(50)
+forward(133)
+circle(50, 200)
+right(140)
+circle(50, 200)
+forward(133)
 
-pen.speed(1)
-pen.pendown()
-pen.color("black", "aliceblue")
-pen.begin_fill()
-pen.forward(100)
-pen.left(120)
-pen.forward(100)
-
-pen.forward(100)
-pen.left(120)
-pen.forward(100)
-
-pen.forward(100)
-pen.left(120)
-pen.forward(100)
-
-pen.end_fill()
-
-pen.penup()
-turtle.done()
-
+end_fill()
+done()
