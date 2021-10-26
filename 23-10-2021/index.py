@@ -31,6 +31,9 @@ import math
 #     print("You are obese!")
 
 # Bai 3
+# a = int(input("Put a number: "))
+# b = int(input("Put a number: "))
+# c = int(input("Put a number: "))
 
 # a = int(input("Put a number: "))
 # b = int(input("Put a number: "))
