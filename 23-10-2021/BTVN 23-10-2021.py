@@ -17,14 +17,13 @@ from turtle import *
 #     print(f"{num} is an interger")
 
 # Bai 3   
-# input = (input("Input character: "))
-# character = str(input)
+# input = input("Input character: "))
 
-# if input != character:
-#     print(f"{input} is a digit")
-# else:
-#     print(f"{input} is not a digit")
-
+# try:
+#     input == int(input)
+#     print(f"'{input}' is a digit")
+# except:
+#     print(f"'{input}' is not a digit")
 # Bai 4 
 # num = float((input("Input number: ")))
 # condition3 = int(3)
@@ -65,8 +64,11 @@ from turtle import *
 # length_1 = float(input("Input length 1: "))
 # length_2 = float(input("Input length 2: "))
 # length_3 = float(input("Input length 3: "))
+# length1_plus_2 = length_1 + length_2 > length_3
+# length2_plus_3 = length_2 + length_3 > length_1
+# length1_plus_3 = length_1 + length_3 > length_2
 
-# if length_1 + length_2 > length_3 and length_2 + length_3 > length_1 and length_1 + length_3 > length_2:
+# if length1_plus_2 and length2_plus_3 and length1_plus_3:
 #     if length_1**2 == length_2**2 + length_3**2 or length_2**2 == length_1**2 + length_3**2 or length_3**2 == length_1**2 + length_2**2:
 #         print("The 3 line segments can form a right triangle.")
 #     elif length_1 == length_2 == length_3:
