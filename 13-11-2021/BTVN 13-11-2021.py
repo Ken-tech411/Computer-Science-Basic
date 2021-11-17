@@ -39,22 +39,24 @@
 #         count += 1
 
 # Bai 4
-n = int(input("Number of items: "))
-items = []
-for i in range(n):
-    item = input("Item {}: ".format(i+1))
-    price_item = float(input("Price of items {}: ".format(i + 1)))
-    items.append((item, price_item))
+# n = int(input("Number of items: "))
+# items = []
+# for i in range(n):
+#     item = input("Item {}: ".format(i+1))
+#     price_item = float(input("Price of items {}: ".format(i + 1)))
+#     items.append((item, price_item))
 
-avg = 0
-for i in range(len(items)):
-    avg += float(items[i][1])
-avg = avg / len(items)
-print(f"\nAverage price: {avg}")
+# avg = 0
+# for i in range(len(items)):
+#     avg += float(items[i][1])
+# avg = avg / len(items)
+# print(f"\nAverage price: {avg}")
 
-for i in range(len(items)):
-    if int(items[i][1]) > avg:
-        print(f"Item(s) above average: {items[i]}")
+# items_moreavg = []
+# for i in range(len(items)):
+#     if int(items[i][1]) > avg:
+#         items_moreavg.append(items[i])
+# print(f"Item(s) above average: {items_moreavg}")
 
 # Bai 5
 # sentence = input("Write a sentence: ")
