@@ -59,7 +59,12 @@
 # print(f"Item(s) above average: {items_moreavg}")
 
 # Bai 5
-# sentence = input("Write a sentence: ")
-# word_list = sentence.split(' ')
-# number_of_words = len(word_list)
-# print(f"Number of unique words: {number_of_words}")
+sentence = input("Write a sentence: ")
+word_split = sentence.split()
+word_list = {}
+for word in word_split:
+    if word in word_list:
+        word_list[word] += 1
+    else:
+        word_list[word] = 1
+print(f"Number of unique words: {len(word_list)}")
