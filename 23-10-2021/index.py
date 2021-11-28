@@ -62,16 +62,16 @@ import math
 #     print("Đổi số đi bạn êy =))))))))")
 
 # Bai 5 
-# year = float(input("Put the year: "))
-# sodu = [0, 3, 6, 9, 11, 14, 17]
-# chia = year % 19
+year = float(input("Put the year: "))
+sodu = [0, 3, 6, 9, 11, 14, 17]
+chia = year % 19
 
-# if year % 4 == 0:
-#     print("This is leap year")
-# elif (chia in sodu):
-#     print("This is leap lunar year")
-# else: 
-#     print("This is not leap year")
+if year % 4 == 0:
+    print("This is leap year")
+elif (chia in sodu):
+    print("This is leap lunar year")
+else: 
+    print("This is not leap year")
 
 # Bai 6
 # practice = float(input("Put your score: "))
