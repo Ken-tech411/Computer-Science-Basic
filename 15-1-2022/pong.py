@@ -6,6 +6,12 @@ fps = pygame.time.Clock() #frame per second
 screen_width = 1280
 screen_height = 720
 
+light_grey = (200, 200, 200)
+line_color = pygame.Color(191, 191, 191)
+bg_color = pygame.Color(71, 71, 71)
+alice_blue = (196,221,254)
+pink = (254,216,247)
+
 #make things
 ball = pygame.Rect(screen_width / 2 - 15, screen_height / 2 - 15, 30, 30)
 player = pygame.Rect(screen_width - 10, screen_height / 2 - 70, 10, 140)
@@ -25,6 +31,10 @@ opponent_speed_y = 8
 player_speed = 0
 opponent_speed = 0
 
+player_points = 0
+opponent_points = 0
+font = pygame.font.Font('freesansbold.ttf', 60)
+
 screen = pygame.display.set_mode((screen_width, screen_height))
 pygame.display.set_caption("PongGame")
 
@@ -34,11 +44,15 @@ def ball_restart():
     ball_speed_y *= random.choice((1,-1))
     ball_speed_x *= random.choice((1,-1))
 
+def show_score(x, y):
+    score = font.render(str(opponent_points) + " : " + str(player_points), True, alice_blue)
+    screen.blit(score, (screen_width / 2 - 61, screen_height / 2 - 50))
+
 loop = True
 while loop:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
-            loop= False
+            loop = False
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_s:
                 player_speed += 5
@@ -62,7 +76,11 @@ while loop:
 
     if ball.top <= 0 or ball.bottom >= screen_height:
         ball_speed_y *= -1
-    if ball.left <= 0 or ball.right >= screen_width:
+    if ball.left <= 0:
+        player_points += 1
+        ball_restart()
+    if ball.right >= screen_width:
+        opponent_points += 1
         ball_restart()
         
     if opponent.top <= 0 or opponent.bottom >= screen_height:
@@ -80,7 +98,9 @@ while loop:
     pygame.draw.rect(screen, alice_blue, player)
     pygame.draw.rect(screen, pink, opponent)
     pygame.draw.ellipse(screen, light_grey, ball)
-    pygame.draw.line(screen, line_color, (screen_width / 2, 0), (screen_width / 2, screen_height))
+    # pygame.draw.line(screen, line_color, (screen_width / 2, 0), (screen_width / 2, screen_height))
 
+    show_score(screen_width / 2, screen_height / 2)
+    pygame.display.update()
     pygame.display.flip()
     fps.tick(60)
